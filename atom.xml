@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[阿杜的博客]]></title>
+  <subtitle><![CDATA[Stay Hungry, Stay Foolish]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="%5Bobject%20Object%5D/"/>
+  <updated>2015-03-02T16:08:21.101Z</updated>
+  <id>[object Object]/</id>
+  
+  <author>
+    <name><![CDATA[Yuanfeng Du]]></name>
+    
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[使用Hexo搭建Github博客]]></title>
+    <link href="%5Bobject%20Object%5D/2015/02/25/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BAGithub%E5%8D%9A%E5%AE%A2/"/>
+    <id>[object Object]/2015/02/25/使用Hexo搭建Github博客/</id>
+    <published>2015-02-25T12:28:09.000Z</published>
+    <updated>2015-02-27T00:17:33.399Z</updated>
+    <content type="html"><![CDATA[<h1 id="步骤">步骤</h1>
+<ol>
+<li>注册Github</li>
+<li>使用Github Pages建立博客</li>
+<li>下载安装Git、Nodejs、npm、Hexo</li>
+<li>用Hexo克隆主题</li>
+<li>注册域名</li>
+<li>将域名与Github Pages空间绑定<a id="more"></a>
+<h1 id="Hexo使用"><a href="http://hexo.io" title="Hexo" target="_blank" rel="external">Hexo使用</a></h1>
+</li>
+</ol>
+<h2 id="1-_部署">1. 部署</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div><div class="line"><span class="built_in">cd</span> &lt;folder&gt;</div><div class="line">hexo install</div></pre></td></tr></table></figure>
+
+<p>会生成如下项目文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── scripts</div><div class="line">├── <span class="built_in">source</span></div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml负责blog的全局配置，使用YAML格式，注意<strong>不能使用tab，使用空格代替，冒号后面要有一个空格</strong><ul>
+<li>Site: title, subtitle, description, author, email, language</li>
+<li>URL: url, root, permalink, tag_dir, archive_dir, category_dir, code_dir。如果blog是放在子目录下面，如<a href="http://yoursite.com/blog，则设置url为http://yoursite.com/blog，设置root为/blog/" target="_blank" rel="external">http://yoursite.com/blog，则设置url为http://yoursite.com/blog，设置root为/blog/</a> </li>
+<li>Writing: new_post_name, default_layout, auto_spacing, titlecase, external_link, filename_case, render_drafts, post_asset_folder, relative_link, highlight</li>
+<li>Category &amp; Tag: default_category, category_map, tag_map</li>
+<li>Archives: archive, category, tag，取值2表示启用分页，1表示停用分页，0表示完全停用，默认是2</li>
+<li>Server: port, logger, logger_format, server_ip</li>
+<li>Date / Time Format: 用Moment.js解析日期，date_format, time_format</li>
+<li>Pagination: per_page, pagination_dir</li>
+<li>Comment: disqus_shortname</li>
+<li>Extensions: theme, exclude_generator</li>
+</ul>
+</li>
+<li>source文件夹是发布文章的地方，以下划线 “_” 开头的文件/文件夹（除了_posts）、隐藏文件都会被忽略。Markdown和HTML文件会被处理后发布到public文件夹下面，其他文件则是简单的拷贝过去。</li>
+</ul>
+<h2 id="2-_命令">2. 命令</h2>
+<h5 id="init">init</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init [folder]</div></pre></td></tr></table></figure>
+
+<p>初始化一个站点，如果没有指定folder，则初始化当前目录为站点</p>
+<h5 id="new">new</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new [layout] &lt;title&gt;</div><div class="line">hexo n [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
+
+<p>新写一篇文章，如果layout不指定，则默认使用_config.yml中的default_layout配置，如果标题title超过1个字符，需使用引号括起来</p>
+<h5 id="generate">generate</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo g</div></pre></td></tr></table></figure>
+
+<p>生成静态文件，可选项：<br>-d, —deploy, 生成后发布<br>-w, —watch, 观察变化的文件</p>
+<h5 id="publish">publish</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo publish [layout] &lt;filename&gt;</div><div class="line">hexo p [layout] &lt;filename&gt;</div></pre></td></tr></table></figure>
+
+<p>发布一个草稿</p>
+<h5 id="server">server</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line">hexo s</div></pre></td></tr></table></figure>
+
+<p>启动服务，可选项：<br>-p, —port, 覆盖默认端口<br>-s, —static, 只服务静态文件<br>-l, —log, 启用日志，覆盖默认的日志格式<br>-d, —drafts, 把草稿当做新发布文章</p>
+<h5 id="deploy">deploy</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+
+<p>发布站点，可选项：<br>—setup，不发布的安装<br>-g, —generate, 在发布前生成静态文件<br>-m, —message, 定制提交信息</p>
+<h5 id="render">render</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo render &lt;file1&gt; [file2]</div></pre></td></tr></table></figure>
+
+<p>渲染文件，可选项：<br>-o, —output, 输出的目的地址</p>
+<h5 id="migrate">migrate</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo migrate &lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
+
+<p>从其他的博客系统<a href="http://hexo.io/docs/migration.html" title="migrate" target="_blank" rel="external">迁移</a>过来</p>
+<h5 id="clean">clean</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
+
+<p>清除缓存文件（db.json）和生成文件（public）</p>
+<h5 id="list">list</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo list &lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
+
+<p>列出站点的所有路径</p>
+<h5 id="version">version</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo version</div></pre></td></tr></table></figure>
+
+<p>显示版本信息</p>
+<h4 id="其他选项">其他选项</h4>
+<h5 id="Safe_模式">Safe 模式</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo --safe</div></pre></td></tr></table></figure>
+
+<p>插件和脚本在启用该模式时不会被加载，可以在安装新插件遇到问题时使用</p>
+<h5 id="Debug_模式">Debug 模式</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo --debug</div></pre></td></tr></table></figure>
+
+<p>在终端显示详细信息，同时保存日志到debug.log</p>
+<h5 id="Silent_模式">Silent 模式</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo --silent</div></pre></td></tr></table></figure>
+
+<p>隐藏终端的输出</p>
+<h5 id="定制配置文件路径">定制配置文件路径</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo --config custom.yml</div></pre></td></tr></table></figure>
+
+<p>定制配置文件，替代_config.yml</p>
+<h2 id="3-_发布新文章">3. 发布新文章</h2>
+<h1 id="参考">参考</h1>
+<blockquote>
+<p><a href="http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog" title="如何搭建一个独立博客——简明Github pages与Hexo教程" target="_blank" rel="external">如何搭建一个独立博客——简明Github pages与Hexo教程</a></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="步骤">步骤</h1>
+<ol>
+<li>注册Github</li>
+<li>使用Github Pages建立博客</li>
+<li>下载安装Git、Nodejs、npm、Hexo</li>
+<li>用Hexo克隆主题</li>
+<li>注册域名</li>
+<li>将域名与Github Pages空间绑定]]>
+    
+    </summary>
+    
+      <category term="Hexo" scheme="%5Bobject%20Object%5D/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>

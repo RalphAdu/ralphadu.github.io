@@ -1,0 +1,519 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>使用Hexo搭建Github博客 | 阿杜的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Yuanfeng Du">
+    
+    <meta name="description" content="步骤
+
+注册Github
+使用Github Pages建立博客
+下载安装Git、Nodejs、npm、Hexo
+用Hexo克隆主题
+注册域名
+将域名与Github Pages空间绑定">
+    
+    
+    <meta name="description" content="步骤
+
+注册Github
+使用Github Pages建立博客
+下载安装Git、Nodejs、npm、Hexo
+用Hexo克隆主题
+注册域名
+将域名与Github Pages空间绑定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo搭建Github博客">
+<meta property="og:url" content="[object Object]/2015/02/25/使用Hexo搭建Github博客/">
+<meta property="og:site_name" content="阿杜的博客">
+<meta property="og:description" content="步骤
+
+注册Github
+使用Github Pages建立博客
+下载安装Git、Nodejs、npm、Hexo
+用Hexo克隆主题
+注册域名
+将域名与Github Pages空间绑定">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用Hexo搭建Github博客">
+<meta name="twitter:description" content="步骤
+
+注册Github
+使用Github Pages建立博客
+下载安装Git、Nodejs、npm、Hexo
+用Hexo克隆主题
+注册域名
+将域名与Github Pages空间绑定">
+
+
+    
+    <link rel="alternative" href="/atom.xml" title="阿杜的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="阿杜的博客" title="阿杜的博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="阿杜的博客">阿杜的博客</a></h1>
+				<h2 class="blog-motto">Stay Hungry, Stay Foolish</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+						<form class="search" action="http://zhannei.baidu.com/cse/search" target="_blank">
+							<label>Search</label>
+						<input name="s" type="hidden" value= 7814077672630975000 ><input type="text" name="q" size="30" placeholder="搜索"><br>
+						</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/25/使用Hexo搭建Github博客/" title="使用Hexo搭建Github博客" itemprop="url">使用Hexo搭建Github博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="[object Object]/about" title="Yuanfeng Du" target="_blank" itemprop="author">Yuanfeng Du</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-25T12:28:09.000Z" itemprop="datePublished"> 发表于 2月 25 2015</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo使用"><span class="toc-text">Hexo使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_部署"><span class="toc-text">1. 部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_命令"><span class="toc-text">2. 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#init"><span class="toc-text">init</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#new"><span class="toc-text">new</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#generate"><span class="toc-text">generate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#publish"><span class="toc-text">publish</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#server"><span class="toc-text">server</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#deploy"><span class="toc-text">deploy</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#render"><span class="toc-text">render</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#migrate"><span class="toc-text">migrate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#clean"><span class="toc-text">clean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#list"><span class="toc-text">list</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#version"><span class="toc-text">version</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他选项"><span class="toc-text">其他选项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Safe_模式"><span class="toc-text">Safe 模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Debug_模式"><span class="toc-text">Debug 模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Silent_模式"><span class="toc-text">Silent 模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#定制配置文件路径"><span class="toc-text">定制配置文件路径</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_发布新文章"><span class="toc-text">3. 发布新文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="步骤">步骤</h1>
+<ol>
+<li>注册Github</li>
+<li>使用Github Pages建立博客</li>
+<li>下载安装Git、Nodejs、npm、Hexo</li>
+<li>用Hexo克隆主题</li>
+<li>注册域名</li>
+<li>将域名与Github Pages空间绑定<a id="more"></a>
+<h1 id="Hexo使用"><a href="http://hexo.io" title="Hexo" target="_blank" rel="external">Hexo使用</a></h1>
+</li>
+</ol>
+<h2 id="1-_部署">1. 部署</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init &lt;folder&gt;</div><div class="line"><span class="built_in">cd</span> &lt;folder&gt;</div><div class="line">hexo install</div></pre></td></tr></table></figure>
+
+<p>会生成如下项目文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── scripts</div><div class="line">├── <span class="built_in">source</span></div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure>
+
+<ul>
+<li>_config.yml负责blog的全局配置，使用YAML格式，注意<strong>不能使用tab，使用空格代替，冒号后面要有一个空格</strong><ul>
+<li>Site: title, subtitle, description, author, email, language</li>
+<li>URL: url, root, permalink, tag_dir, archive_dir, category_dir, code_dir。如果blog是放在子目录下面，如<a href="http://yoursite.com/blog，则设置url为http://yoursite.com/blog，设置root为/blog/" target="_blank" rel="external">http://yoursite.com/blog，则设置url为http://yoursite.com/blog，设置root为/blog/</a> </li>
+<li>Writing: new_post_name, default_layout, auto_spacing, titlecase, external_link, filename_case, render_drafts, post_asset_folder, relative_link, highlight</li>
+<li>Category &amp; Tag: default_category, category_map, tag_map</li>
+<li>Archives: archive, category, tag，取值2表示启用分页，1表示停用分页，0表示完全停用，默认是2</li>
+<li>Server: port, logger, logger_format, server_ip</li>
+<li>Date / Time Format: 用Moment.js解析日期，date_format, time_format</li>
+<li>Pagination: per_page, pagination_dir</li>
+<li>Comment: disqus_shortname</li>
+<li>Extensions: theme, exclude_generator</li>
+</ul>
+</li>
+<li>source文件夹是发布文章的地方，以下划线 “_” 开头的文件/文件夹（除了_posts）、隐藏文件都会被忽略。Markdown和HTML文件会被处理后发布到public文件夹下面，其他文件则是简单的拷贝过去。</li>
+</ul>
+<h2 id="2-_命令">2. 命令</h2>
+<h5 id="init">init</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init [folder]</div></pre></td></tr></table></figure>
+
+<p>初始化一个站点，如果没有指定folder，则初始化当前目录为站点</p>
+<h5 id="new">new</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new [layout] &lt;title&gt;</div><div class="line">hexo n [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
+
+<p>新写一篇文章，如果layout不指定，则默认使用_config.yml中的default_layout配置，如果标题title超过1个字符，需使用引号括起来</p>
+<h5 id="generate">generate</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo g</div></pre></td></tr></table></figure>
+
+<p>生成静态文件，可选项：<br>-d, —deploy, 生成后发布<br>-w, —watch, 观察变化的文件</p>
+<h5 id="publish">publish</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo publish [layout] &lt;filename&gt;</div><div class="line">hexo p [layout] &lt;filename&gt;</div></pre></td></tr></table></figure>
+
+<p>发布一个草稿</p>
+<h5 id="server">server</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line">hexo s</div></pre></td></tr></table></figure>
+
+<p>启动服务，可选项：<br>-p, —port, 覆盖默认端口<br>-s, —static, 只服务静态文件<br>-l, —log, 启用日志，覆盖默认的日志格式<br>-d, —drafts, 把草稿当做新发布文章</p>
+<h5 id="deploy">deploy</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+
+<p>发布站点，可选项：<br>—setup，不发布的安装<br>-g, —generate, 在发布前生成静态文件<br>-m, —message, 定制提交信息</p>
+<h5 id="render">render</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo render &lt;file1&gt; [file2]</div></pre></td></tr></table></figure>
+
+<p>渲染文件，可选项：<br>-o, —output, 输出的目的地址</p>
+<h5 id="migrate">migrate</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo migrate &lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
+
+<p>从其他的博客系统<a href="http://hexo.io/docs/migration.html" title="migrate" target="_blank" rel="external">迁移</a>过来</p>
+<h5 id="clean">clean</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure>
+
+<p>清除缓存文件（db.json）和生成文件（public）</p>
+<h5 id="list">list</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo list &lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
+
+<p>列出站点的所有路径</p>
+<h5 id="version">version</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo version</div></pre></td></tr></table></figure>
+
+<p>显示版本信息</p>
+<h4 id="其他选项">其他选项</h4>
+<h5 id="Safe_模式">Safe 模式</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo --safe</div></pre></td></tr></table></figure>
+
+<p>插件和脚本在启用该模式时不会被加载，可以在安装新插件遇到问题时使用</p>
+<h5 id="Debug_模式">Debug 模式</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo --debug</div></pre></td></tr></table></figure>
+
+<p>在终端显示详细信息，同时保存日志到debug.log</p>
+<h5 id="Silent_模式">Silent 模式</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo --silent</div></pre></td></tr></table></figure>
+
+<p>隐藏终端的输出</p>
+<h5 id="定制配置文件路径">定制配置文件路径</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo --config custom.yml</div></pre></td></tr></table></figure>
+
+<p>定制配置文件，替代_config.yml</p>
+<h2 id="3-_发布新文章">3. 发布新文章</h2>
+<h1 id="参考">参考</h1>
+<blockquote>
+<p><a href="http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog" title="如何搭建一个独立博客——简明Github pages与Hexo教程" target="_blank" rel="external">如何搭建一个独立博客——简明Github pages与Hexo教程</a></p>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Hexo/">Hexo</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	<div class="share-jiathis">
+	  <!-- JiaThis Button BEGIN -->
+<script type="text/javascript">
+var jiathis_config = {data_track_clickback:'true'};
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?move=0&amp;uid=1421413520086267" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+	 </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/02/25/使用Hexo搭建Github博客/" data-title="使用Hexo搭建Github博客" data-url="[object Object]/2015/02/25/使用Hexo搭建Github博客/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo使用"><span class="toc-text">Hexo使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_部署"><span class="toc-text">1. 部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_命令"><span class="toc-text">2. 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#init"><span class="toc-text">init</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#new"><span class="toc-text">new</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#generate"><span class="toc-text">generate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#publish"><span class="toc-text">publish</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#server"><span class="toc-text">server</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#deploy"><span class="toc-text">deploy</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#render"><span class="toc-text">render</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#migrate"><span class="toc-text">migrate</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#clean"><span class="toc-text">clean</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#list"><span class="toc-text">list</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#version"><span class="toc-text">version</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他选项"><span class="toc-text">其他选项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Safe_模式"><span class="toc-text">Safe 模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Debug_模式"><span class="toc-text">Debug 模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Silent_模式"><span class="toc-text">Silent 模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#定制配置文件路径"><span class="toc-text">定制配置文件路径</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_发布新文章"><span class="toc-text">3. 发布新文章</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Yuanfeng Du in Alibaba. <br/>
+			Welcome to my blog.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/imadu" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2015 
+		
+		<a href="[object Object]/about" target="_blank" title="Yuanfeng Du">Yuanfeng Du</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"ralphadu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc78f2a302b520cef23da2032b25ed94f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254443901'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1254443901' type='text/javascript'%3E%3C/script%3E"));</script>
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+  </body>
+</html>
